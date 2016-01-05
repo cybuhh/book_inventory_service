@@ -25,6 +25,9 @@ module.exports = function(mongo) {
                     },
                     'application/json': function(){
                         res.send({ status: 'available' });
+                    },
+                    default: function() {
+                        res.send({ foo: 'bar'})
                     }
                 });
                 res.send(docs);
