@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node bin/server.js",
     "test": "mocha",
+    "heroku": "node infra/heroin-create.js",
     "lint": "jshint --exclude=node_modules/** **.js"
   },
   "author": "",
