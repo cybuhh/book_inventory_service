@@ -2,14 +2,23 @@
   "name": "book_inventory_service",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node bin/server.js",
+    "test": "mocha",
+    "lint": "jshint --exclude=node_modules/** **.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.13.3"
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "lodash": "^3.10.1",
+    "mongodb": "^2.1.2"
+  },
+  "devDependencies": {
+    "jshint": "^2.8.0",
+    "mocha": "^2.3.4",
+    "supertest": "^1.1.0"
   }
 }
