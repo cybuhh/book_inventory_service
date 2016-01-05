@@ -7,6 +7,9 @@ module.exports = function(mongo) {
         mongo.findAll()
             .then(function(docs) {
                 res.send(docs);
+            })
+            .catch(function(err) {
+                console.log(err);
             });
     });
 
@@ -16,6 +19,14 @@ module.exports = function(mongo) {
                 if (docs === null) {
                     return res.sendStatus(404);
                 }
+                res.format({
+                    'text/html': function() {
+                        res.send('<div class="available">Available</div>');
+                    },
+                    'application/json': function(){
+                        res.send({ status: 'available' });
+                    }
+                });
                 res.send(docs);
             })
             .catch(function() {
