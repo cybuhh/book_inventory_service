@@ -1,6 +1,6 @@
 "use strict";
 
-const dbUrl = 'mongodb://localhost:27017/microservices-books';
+const dbUrl = process.env. MONGOLAB_URI || 'mongodb://localhost:27017/microservices-books';
 const MongoClient = require('mongodb').MongoClient;
 
 function Mongo() {
